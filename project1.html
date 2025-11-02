@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Types.xml Validator - DayZ Modding Project</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .thread {
+      background: rgba(255, 255, 255, 0.15);
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .thread h3 {
+      margin: 0;
+    }
+
+    .comment-box {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    textarea {
+      width: 90%;
+      height: 80px;
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      resize: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project1.html">Project 1</a></li>
+      <li><a href="project2.html">Project 2</a></li>
+      <li><a href="project3.html">Project 3</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Types.xml Validator</h1>
+    <p>A tool to validate and optimize your DayZ mod’s <code>types.xml</code> configuration.</p>
+
+    <div class="thread">
+      <h3>🧩 Feature Discussion</h3>
+      <p>We’re planning to add real-time schema checking and duplicate item detection.</p>
+    </div>
+
+    <div class="thread">
+      <h3>🐞 Bug Reports</h3>
+      <p>Found an issue? Post your findings below.</p>
+    </div>
+
+    <div class="comment-box">
+      <h3>Leave a Comment</h3>
+      <textarea id="comment" placeholder="Write your comment..."></textarea><br />
+      <button onclick="addComment()">Post</button>
+      <div id="comment-list"></div>
+    </div>
+  </div>
+
+  <script>
+    function addComment() {
+      const box = document.getElementById('comment');
+      const list = document.getElementById('comment-list');
+      if (box.value.trim() !== '') {
+        const newComment = document.createElement('div');
+        newComment.className = 'thread';
+        newComment.innerHTML = `<p>${box.value}</p>`;
+        list.prepend(newComment);
+        box.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
